@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="お問い合わせフォームのテスト" />
-<title> お問い合わせ</title>
+<title>お問い合わせ</title>
 <link href="../css/reset.css" rel="stylesheet" type="text/css">
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="../js/jquery.validate.min.js"></script>
@@ -46,28 +46,28 @@ $(document).ready(function() {
       <h1>お問い合わせフォーム</h1>
   </div>
 </header>
-  <div class="wrap">
+  <div class="wrapper">
     <form action="confirm.php" method="post" id="contact_form" class="h-adr">
       <span class="p-country-name" style="display:none;">Japan</span>
       <div class="sp100 of_x">
         <table id="contactform_table" class="width81 mb_30">
           <tr>
-            <th><span class="color_red">※</span> お名前</th>
+            <th><span class="color_red">※</span> <label for="name">お名前</label></th>
             <td><input name="name" type="text" id="name" size="40" required></td>
           </tr>
           <tr>
-            <th><span class="color_red">※</span> ふりがな</th>
+            <th><span class="color_red">※</span> <label for="huri">ふりがな</label></th>
             <td><input name="huri" type="text" id="huri" size="40" required></td>
           </tr>
           <tr>
-            <th><span class="color_red">※</span> メールアドレス</th>
+            <th><span class="color_red">※</span> <label for="email">メールアドレス</label></th>
             <td><input name="email" type="email" id="email" size="45" required>
               <br>
               <p>確認用に再度ご入力下さい。</p>
               <input name="email2" type="email" id="email2" size="45" required></td>
           </tr>
           <tr>
-            <th>ご職業</th>
+            <th><label for="profession">ご職業</label></th>
             <td><select name="profession" id="profession">
                 <option value="" selected>-選択してください-</option>
                 <option value="公務員">公務員</option>
@@ -82,7 +82,7 @@ $(document).ready(function() {
               </select></td>
           </tr>
           <tr>
-            <th>件名</th>
+            <th><label for="subject">件名</label></th>
             <td><select name="subject" id="subject">
                 <option value="" selected>-選択してください-</option>
                 <option value="ご予約・お申し込みについて">ご予約・お申し込みについて</option>
@@ -95,7 +95,7 @@ $(document).ready(function() {
             <th>住所</th>
             <td><label for="zip">郵便番号</label>
               <br>
-              <input name="zip" type="text" id="zip1" size="10" class="p-postal-code">
+              <input name="zip" type="text" id="zip" size="10" class="p-postal-code">
               <br>
               <label for="pref">都道府県</label>
               <br>
@@ -159,11 +159,11 @@ $(document).ready(function() {
               <input name="other_address" type="text" id="other_address" size="50"></td>
           </tr>
           <tr>
-            <th><span class="color_red">※</span> 電話番号</th>
-            <td><input name="phonenumber" type="tel" id="phonenumber" size="20" required></td>
+            <th><span class="color_red">※</span> <label for="tel">電話番号</label></th>
+            <td><input name="tel" type="tel" id="tel" size="20" required></td>
           </tr>
           <tr>
-            <th>法人様向け</th>
+            <th><label for="company_menu">法人様向け</label></th>
             <td><select name="company_menu" id="company_menu">
                 <option value="" selected>-選択してください-</option>
                 <option value="研修又はイベントご依頼">研修又はイベントご依頼</option>
@@ -174,20 +174,20 @@ $(document).ready(function() {
           </tr>
           <tr>
             <th>お問い合わせ種別</th>
-            <td><input type="checkbox" name="contact_type[]" value="ご依頼" required>ご依頼
-              <input type="checkbox" name="contact_type[]" value="ご質問" required>ご質問
-              <input type="checkbox" name="contact_type[]" value="その他" required>その他
+            <td><input type="checkbox" name="contact_type[]" value="ご依頼" id="request" required><label for="request">ご依頼</label>
+              <input type="checkbox" name="contact_type[]" value="ご質問" id="question" required><label for="question">ご質問</label>
+              <input type="checkbox" name="contact_type[]" value="その他" id="others" required><label for="others">その他</label>
               </td>
           </tr>
           <tr>
             <th>ご連絡方法</th>
-            <td><input type="radio" name="contact_means" value="Eメール" required>Eメール
-              <input type="radio" name="contact_means" value="電話" required>電話
-              <input type="radio" name="contact_means" value="その他" required>その他
+            <td><input type="radio" name="contact_means" value="Eメール" id="contact_email" required><label for="contact_email">Eメール</label>
+              <input type="radio" name="contact_means" value="電話" id="contact_tel" required><label for="contact_tel">電話</label>
+              <input type="radio" name="contact_means" value="その他" id="contact_others" required><label for="contact_others">その他</label>
               </td>
           </tr>
           <tr>
-            <th><span class="color_red">※</span> お問い合わせ内容</th>
+            <th><span class="color_red">※</span> <label for="comment">お問い合わせ内容</label></th>
             <td><textarea name="comment" cols="70" rows="10" id="comment" required></textarea></td>
           </tr>
           <tr>
@@ -200,3 +200,5 @@ $(document).ready(function() {
   </div>
 </body>
 </html>
+
+
